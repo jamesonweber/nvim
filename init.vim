@@ -127,7 +127,8 @@ if g:IsLoaded('ale')
     let g:ale_sign_warning = '⚠'
     let g:ale_sign_column_always = 1
 
-    let g:ale_fixers = {'typescript': ['eslint']}
+    let g:ale_fixers = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
+    let g:ale_linters = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
 endif
 
 if g:IsLoaded('vim-airline')
@@ -169,6 +170,7 @@ if g:IsLoaded('coc.nvim')
         " Update signature help on jump placeholder
         autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
     augroup end
+
     " goto definition
     nmap <silent> gd <Plug>(coc-definition)
     " goto reference
@@ -184,6 +186,10 @@ if g:IsLoaded('coc.nvim')
     nmap <silent> <leader>qf <Plug>(coc-fix-current)
     " Use K for show documentation in preview window
     nnoremap <silent> K :call <SID>show_documentation()<cr>
+
+    " quick fix menu
+    vmap <silent> <leader><space> <Plug>(coc-codeaction-selected)
+    nmap <silent> <leader><space> <Plug>(coc-codeaction)
 endif
 
 if g:IsLoaded('omnisharp-vim')
