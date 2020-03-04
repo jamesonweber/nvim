@@ -1,5 +1,7 @@
 " Note: This config requires the following
-" - $NVIMCONFIG set in .zshenv (or .bash_profile) to ~/.config/nvim
+" - $NVIMCONFIG set in 
+"    - .zshenv (or .bash_profile) to ~/.config/nvim
+"    - Windows environment variables as NVIMCONFIG
 " - ripgrep should be installed
 
 if &compatible
@@ -129,6 +131,8 @@ if g:IsLoaded('ale')
 
     let g:ale_fixers = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
     let g:ale_linters = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
+
+    let g:ale_fix_on_save = 1
 endif
 
 if g:IsLoaded('vim-airline')
