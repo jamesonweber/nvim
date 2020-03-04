@@ -1,7 +1,7 @@
 " Note: This config requires the following
 " - $NVIMCONFIG set in 
-"    - .zshenv (or .bash_profile) to ~/.config/nvim
-"    - Windows environment variables as NVIMCONFIG
+"    - .zshenv (or .bash_profile) to "~/.config/nvim"
+"    - Windows environment variables as NVIMCONFIG to "C\:Users\_username_\AppData\Local\nvim"
 " - ripgrep should be installed
 
 if &compatible
