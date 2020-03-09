@@ -129,8 +129,8 @@ if g:IsLoaded('ale')
     let g:ale_sign_warning = '⚠'
     let g:ale_sign_column_always = 1
 
-    let g:ale_fixers = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
-    let g:ale_linters = { 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
+    let g:ale_fixers = { 'typescript': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier'] }
+    let g:ale_linters = { 'typescript': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier'] }
 
     let g:ale_fix_on_save = 1
 endif
