@@ -1,3 +1,6 @@
 {
+    "diagnostic.errorSign": "✗",
+    "diagnostic.warningSign": "⚠",
+    "coc.preferences.enableFloatHighlight": false,
     "typescript.preferences.importModuleSpecifier": "relative"
 }
