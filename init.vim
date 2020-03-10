@@ -173,6 +173,8 @@ if g:IsLoaded('coc.nvim')
         autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
         " Update signature help on jump placeholder
         autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+        " Fix the color for info from yellow to brown
+        autocmd ColorScheme * hi CocInfoSign ctermfg=Brown guifg=#ff922b
     augroup end
 
     " goto definition
