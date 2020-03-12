@@ -1,5 +1,5 @@
 " Note: This config requires the following
-" - $NVIMCONFIG set in 
+" - $NVIMCONFIG set in
 "    - .zshenv (or .bash_profile) to "~/.config/nvim"
 "    - Windows environment variables as NVIMCONFIG to "C\:Users\_username_\AppData\Local\nvim"
 " - ripgrep should be installed
@@ -129,9 +129,18 @@ if g:IsLoaded('ale')
     let g:ale_sign_warning = '⚠'
     let g:ale_sign_column_always = 1
 
-    let g:ale_fixers = { 'typescript': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier'] }
-    let g:ale_linters = { 'typescript': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier'] }
+    let g:ale_fixers = {
+    \   '*': ['trim_whitespace'],
+    \   'typescript': ['eslint', 'prettier'],
+    \   'typescriptreact': ['eslint', 'prettier']
+    \}
+    let g:ale_linters = {
+    \   'cs': ['OmniSharp'],
+    \   'typescript': ['eslint', 'prettier'],
+    \   'typescriptreact': ['eslint', 'prettier']
+    \}
 
+    let g:ale_set_quickfix = 1
     let g:ale_fix_on_save = 1
 endif
 
@@ -253,4 +262,3 @@ if g:IsLoaded('omnisharp-vim')
                 \ <leader><Space>
                 \ :call OmniSharp#GetCodeActions('visual')<CR>
 endif
-
