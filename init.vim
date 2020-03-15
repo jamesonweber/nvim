@@ -87,6 +87,7 @@ call g:AddPackage({ 'repo': 'vim-airline', 'package': 'vim-airline-themes' })
 call g:AddPackage({ 'repo': 'NLKNguyen', 'package': 'papercolor-theme' })
 
 " ------------ Remaps  ------------ "
+
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
 
