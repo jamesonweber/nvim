@@ -207,6 +207,15 @@ if g:IsLoaded('coc.nvim')
     nmap <silent> <leader><space> <Plug>(coc-codeaction)
 endif
 
+" Show documentation in preview window
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+endfunction
+
 if g:IsLoaded('omnisharp-vim')
     let g:OmniSharp_server_stdio = 1
     if g:IsLoaded('fzf')
