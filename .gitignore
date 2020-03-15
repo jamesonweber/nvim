@@ -1,2 +1,8 @@
+# Plugin bins
 pack/
+
+# Temporary files
+.netrwhist
+
+#General
 .DS_Store
