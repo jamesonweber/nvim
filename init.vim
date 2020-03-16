@@ -8,6 +8,7 @@ if &compatible
     set nocompatible
 endif
 
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 command! PackUpdate packadd minpac | source $NVIMCONFIG/init.vim | redraw | call minpac#update()
 command! PackClean packadd minpac | source $NVIMCONFIG/init.vim | call minpac#clean()
 command! Reload source $NVIMCONFIG/init.vim
@@ -90,6 +91,7 @@ call g:AddPackage({ 'repo': 'NLKNguyen', 'package': 'papercolor-theme' })
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
+noremap <silent> <C-s> :w<cr>
 
 " Bind file explorer to ctrl e
 nnoremap <silent> <C-e> :Explore<cr>
