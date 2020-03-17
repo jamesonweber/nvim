@@ -1,6 +1,7 @@
 {
-    "diagnostic.errorSign": "✗",
-    "diagnostic.infoSign": "⚠",
-    "diagnostic.warningSign": "⚠",
+    "diagnostic.errorSign": "x",
+    "diagnostic.hintSign": "h",
+    "diagnostic.infoSign": "i",
+    "diagnostic.warningSign": "w",
     "typescript.preferences.importModuleSpecifier": "relative"
 }

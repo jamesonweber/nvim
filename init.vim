@@ -78,6 +78,7 @@ call g:AddPackage({ 'repo': 'editorconfig', 'package': 'editorconfig-vim' })
 call g:AddPackage({ 'repo': 'kana', 'package': 'vim-textobj-user' })
 call g:AddPackage({ 'repo': 'kana', 'package': 'vim-textobj-indent' })
 call g:AddPackage({ 'repo': 'junegunn', 'package': 'fzf', 'config': { 'do': '!./install --bin' } })
+call g:AddPackage({ 'repo': 'prettier', 'package': 'vim-prettier', 'config': { 'do': '!yarn install' } })
 call g:AddPackage({ 'repo': 'dense-analysis', 'package': 'ale' })
 call g:AddPackage({ 'repo': 'neoclide', 'package': 'coc.nvim', 'config': { 'do': '!./install.sh' } })
 call g:AddPackage({ 'repo': 'sheerun', 'package': 'vim-polyglot' })
@@ -91,7 +92,7 @@ call g:AddPackage({ 'repo': 'NLKNguyen', 'package': 'papercolor-theme' })
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
-noremap <silent> <C-s> :w<cr>
+noremap <silent> <C-s> :Prettier<cr> :w<cr>
 
 " Bind file explorer to ctrl e
 nnoremap <silent> <C-e> :Explore<cr>
@@ -137,8 +138,8 @@ if g:IsLoaded('fzf')
 endif
 
 if g:IsLoaded('ale')
-    let g:ale_sign_error = '✗'
-    let g:ale_sign_warning = '⚠'
+    let g:ale_sign_error = 'x'
+    let g:ale_sign_warning = 'w'
     let g:ale_sign_column_always = 1
 
     let g:ale_fixers = {
