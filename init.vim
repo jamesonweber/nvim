@@ -1,8 +1,19 @@
 " Note: This config requires the following
 " - $NVIMCONFIG set in
-"    - .zshenv (or .bash_profile) to "~/.config/nvim"
 "    - Windows environment variables as NVIMCONFIG to "C\:Users\_username_\AppData\Local\nvim"
+"    - .zshenv (or .bash_profile) to "~/.config/nvim"
+"
+"      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"      NVIMCONFIG="$HOME/.config/nvim/"
+"      export NVIMCONFIG
+"      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"
 " - ripgrep should be installed
+"   - https://github.com/BurntSushi/ripgrep
+"
+" - minpac should be installed
+"   - https://github.com/k-takata/minpac
+"      git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 
 if &compatible
     set nocompatible
@@ -101,6 +112,8 @@ nnoremap <silent> <C-g> :Git<cr>
 
 " ------------ Options ------------ "
 
+" Set the cursor hold to 1 second
+set updatetime=1000
 set signcolumn=yes
 set history=400
 set lazyredraw
@@ -142,6 +155,9 @@ if g:IsLoaded('ale')
     let g:ale_sign_warning = 'w'
     let g:ale_sign_column_always = 1
 
+    " Note: I find that ale prettier works better so let it do it's thing
+    " if possible. Otherwise fall back on the prettier plugin when prettier
+    " is not installed locally or is not accessible.
     let g:ale_fixers = {
     \   '*': ['trim_whitespace'],
     \   'typescript': ['eslint', 'prettier'],
@@ -197,6 +213,8 @@ if g:IsLoaded('coc.nvim')
         autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
         " Fix the color for info from yellow to brown
         autocmd ColorScheme * hi CocInfoSign ctermfg=Brown guifg=#ff922b
+        " Fix the color for errors to red when a Reload occurs
+        autocmd ColorScheme * hi CocErrorSign ctermfg=Red guifg=#ff0000
     augroup end
 
     " goto definition
