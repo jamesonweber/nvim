@@ -111,8 +111,6 @@ nnoremap <silent> <C-e> :Explore<cr>
 nnoremap <silent> <C-g> :Git<cr>
 " Bind search to ctrl f
 nnoremap <silent> <C-f> /\c
-" Bind replace to ctrl F
-nnoremap <silent> <C-F> :%s/
 
 " ------------ Options ------------ "
 
