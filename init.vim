@@ -98,6 +98,7 @@ call g:AddPackage({ 'repo': 'tpope', 'package': 'vim-vinegar' })
 call g:AddPackage({ 'repo': 'vim-airline', 'package': 'vim-airline' })
 call g:AddPackage({ 'repo': 'vim-airline', 'package': 'vim-airline-themes' })
 call g:AddPackage({ 'repo': 'NLKNguyen', 'package': 'papercolor-theme' })
+call g:AddPackage({ 'repo': 'gko', 'package': 'vim-coloresque' })
 
 " ------------ Remaps  ------------ "
 
