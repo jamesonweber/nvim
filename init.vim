@@ -109,6 +109,10 @@ noremap <silent> <C-s> :Prettier<cr> :w<cr>
 nnoremap <silent> <C-e> :Explore<cr>
 " Bind git fugitive manager to ctrl g
 nnoremap <silent> <C-g> :Git<cr>
+" Bind search to ctrl f
+nnoremap <silent> <C-f> /\c
+" Bind replace to ctrl F
+nnoremap <silent> <C-F> :%s/
 
 " ------------ Options ------------ "
 
