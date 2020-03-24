@@ -89,6 +89,7 @@ call g:AddPackage({ 'repo': 'editorconfig', 'package': 'editorconfig-vim' })
 call g:AddPackage({ 'repo': 'kana', 'package': 'vim-textobj-user' })
 call g:AddPackage({ 'repo': 'kana', 'package': 'vim-textobj-indent' })
 call g:AddPackage({ 'repo': 'junegunn', 'package': 'fzf', 'config': { 'do': '!./install --bin' } })
+call g:AddPackage({ 'repo': 'junegunn', 'package': 'fzf.vim', 'config': { 'do': 'fzf#install()' } })
 call g:AddPackage({ 'repo': 'prettier', 'package': 'vim-prettier', 'config': { 'do': '!yarn install' } })
 call g:AddPackage({ 'repo': 'dense-analysis', 'package': 'ale' })
 call g:AddPackage({ 'repo': 'neoclide', 'package': 'coc.nvim', 'config': { 'do': '!./install.sh' } })
@@ -150,6 +151,13 @@ if g:IsLoaded('fzf')
     if executable('rg')
         let $FZF_DEFAULT_OPTS='--layout=reverse'
         let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
+
+        " Bind search in all files to F
+        command! -bang -nargs=* Rg
+          \ call fzf#vim#grep(
+          \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+          \   fzf#vim#with_preview(), <bang>0)
+        nnoremap <silent> F :Rg<cr>
     endif
 endif
 
