@@ -114,6 +114,12 @@ nnoremap <silent> <C-g> :Git<cr>
 " Bind search to ctrl f
 nnoremap <silent> <C-f> /\c
 
+" Bind ctrl based navigation
+nnoremap <C-h> ^
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+nnoremap <C-l> $
+
 " ------------ Options ------------ "
 
 " Set the cursor hold to 1 second
