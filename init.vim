@@ -155,7 +155,7 @@ if g:IsLoaded('fzf')
         " Bind search in all files to F
         command! -bang -nargs=* Rg
           \ call fzf#vim#grep(
-          \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+          \   'rg --column --line-number --no-heading --color=always --smart-case -g "!{node_modules,bin}/*" '.shellescape(<q-args>), 1,
           \   fzf#vim#with_preview(), <bang>0)
         nnoremap <silent> F :Rg<cr>
     endif
