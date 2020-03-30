@@ -105,7 +105,7 @@ call g:AddPackage({ 'repo': 'gko', 'package': 'vim-coloresque' })
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
-noremap <silent> <C-s> :Prettier<cr> :w<cr>
+noremap <silent> <C-s> :Prettier<cr>:w<cr>
 
 " Bind file explorer to ctrl e
 nnoremap <silent> <C-e> :Explore<cr>
