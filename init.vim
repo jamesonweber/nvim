@@ -178,7 +178,8 @@ if g:IsLoaded('ale')
     let g:ale_fixers = {
     \   '*': ['trim_whitespace'],
     \   'typescript': ['eslint', 'prettier'],
-    \   'typescriptreact': ['eslint', 'prettier']
+    \   'typescriptreact': ['eslint', 'prettier'],
+    \   'yaml': []
     \}
     let g:ale_linters = {
     \   'cs': ['OmniSharp'],
