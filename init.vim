@@ -105,7 +105,7 @@ call g:AddPackage({ 'repo': 'gko', 'package': 'vim-coloresque' })
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
-noremap <silent> <C-s> :Prettier<cr>:w<cr>
+noremap <silent> <C-s> :call g:Save()<CR>:w<CR>
 
 " Bind file explorer to ctrl e
 nnoremap <silent> <C-e> :Explore<cr>
@@ -119,6 +119,16 @@ nnoremap <C-h> ^
 nnoremap <C-j> 10j
 nnoremap <C-k> 10k
 nnoremap <C-l> $
+
+
+function! g:Save()
+    let auto_format_type_list = ['typescript', 'typescriptreact', 'javascript', 'javascriptreact']
+    if index(auto_format_type_list, &ft) >= 0
+        :CocCommand tsserver.organizeImports
+        sleep 100m
+        :Prettier
+    endif
+endfunction
 
 " ------------ Options ------------ "
 
