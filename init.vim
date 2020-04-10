@@ -14,6 +14,9 @@
 " - minpac should be installed
 "   - https://github.com/k-takata/minpac
 "      git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+"
+" - Python links should be installed (if not already installed, use :checkhealth) with
+"   - python3 -m pip install --user --upgrade pynvim
 
 if &compatible
     set nocompatible
