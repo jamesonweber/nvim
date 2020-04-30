@@ -117,11 +117,11 @@ nnoremap <silent> <C-g> :Git<cr>
 " Bind search to ctrl f
 nnoremap <silent> <C-f> /\c
 
-" Bind ctrl based navigation
-nnoremap <C-h> ^
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
-nnoremap <C-l> $
+" Bind quick line navigation
+nnoremap H ^
+nnoremap J 10j
+nnoremap K 10k
+nnoremap L $
 
 
 function! g:Save()
@@ -261,8 +261,8 @@ if g:IsLoaded('coc.nvim')
     nmap <silent> <leader>f <Plug>(coc-format)
     " Fix autofix problem of current line
     nmap <silent> <leader>qf <Plug>(coc-fix-current)
-    " Use K for show documentation in preview window
-    nnoremap <silent> K :call <SID>show_documentation()<cr>
+    " Use ctrl-k for show documentation in preview window
+    nnoremap <C-k> :call <SID>show_documentation()<cr>
 
     " quick fix menu
     vmap <silent> <leader><space> <Plug>(coc-codeaction-selected)
@@ -310,7 +310,7 @@ if g:IsLoaded('omnisharp-vim')
                 \ <Plug>(omnisharp_rename)
 
     au FileType cs nmap <buffer> <silent>
-                \ K
+                \ <C-k>
                 \ <Plug>(omnisharp_documentation)
 
     au FileType cs nmap <buffer> <silent>
