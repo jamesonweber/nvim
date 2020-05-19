@@ -110,8 +110,6 @@ call g:AddPackage({ 'repo': 'gko', 'package': 'vim-coloresque' })
 noremap <silent> <C-q> :bd<cr>
 noremap <silent> <C-s> :call g:Save()<CR>:w<CR>
 
-" Bind file explorer to ctrl e
-nnoremap <silent> <C-e> :Explore<cr>
 " Bind git fugitive manager to ctrl g
 nnoremap <silent> <C-g> :Git<cr>
 " Bind search to ctrl f
@@ -123,12 +121,18 @@ nnoremap J 10j
 nnoremap K 10k
 nnoremap L $
 
+" Rebind popup navigation and confirmation
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+
 
 function! g:Save()
     let auto_format_type_list = ['typescript', 'typescriptreact', 'javascript', 'javascriptreact']
     if index(auto_format_type_list, &ft) >= 0
         :CocCommand tsserver.organizeImports
-        sleep 100m
+        sleep 500m
         :Prettier
     endif
 endfunction
