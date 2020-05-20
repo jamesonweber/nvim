@@ -111,7 +111,7 @@ noremap <silent> <C-q> :bd<cr>
 noremap <silent> <C-s> :call g:Save()<CR>:w<CR>
 
 " Bind git fugitive manager to ctrl g
-nnoremap <silent> <C-g> :Git<cr>
+nnoremap <silent> <C-g> :tabedit<cr>:Git<cr>
 " Bind search to ctrl f
 nnoremap <silent> <C-f> /\c
 
