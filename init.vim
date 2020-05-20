@@ -120,6 +120,10 @@ nnoremap H ^
 nnoremap J 10j
 nnoremap K 10k
 nnoremap L $
+vnoremap H ^
+vnoremap J 10j
+vnoremap K 10k
+vnoremap L $
 
 " Rebind popup navigation and confirmation
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
