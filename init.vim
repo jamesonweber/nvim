@@ -189,6 +189,10 @@ if g:IsLoaded('fzf')
 endif
 
 if g:IsLoaded('ale')
+    " Bind Alt-j, Alt-k to navigate between errors
+    nnoremap <silent> <A-j> :ALENext<cr>
+    nnoremap <silent> <A-k> :ALEPrevious<cr>
+
     let g:ale_sign_error = 'x'
     let g:ale_sign_warning = 'w'
     let g:ale_sign_column_always = 1
@@ -224,8 +228,13 @@ endif
 let g:EditorConfig_disable_rules = ['insert_final_newline', 'trim_trailing_whitespace']
 
 if g:IsLoaded('coc.nvim')
+    " Bind Crtl-k, Ctrl-j to navigate between errors
+    nnoremap <silent> <C-j> :call CocAction('diagnosticNext')<cr>
+    nnoremap <silent> <C-k> :call CocAction('diagnosticPrevious')<cr>
+
     " extensions
     let g:coc_global_extensions = [
+    \ 'coc-spell-checker',
     \ 'coc-tsserver',
     \ 'coc-json',
     \ 'coc-snippets',
@@ -251,7 +260,7 @@ if g:IsLoaded('coc.nvim')
         " Update signature help on jump placeholder
         autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
         " Fix the color for info from yellow to brown
-        autocmd ColorScheme * hi CocInfoSign ctermfg=Brown guifg=#ff922b
+        autocmd ColorScheme * hi CocInfoSign ctermfg=Blue guifg=#ff922b
         " Fix the color for errors to red when a Reload occurs
         autocmd ColorScheme * hi CocErrorSign ctermfg=Red guifg=#ff0000
     augroup end
@@ -269,8 +278,8 @@ if g:IsLoaded('coc.nvim')
     nmap <silent> <leader>f <Plug>(coc-format)
     " Fix autofix problem of current line
     nmap <silent> <leader>qf <Plug>(coc-fix-current)
-    " Use ctrl-k for show documentation in preview window
-    nnoremap <C-k> :call <SID>show_documentation()<cr>
+    " Use leader-k for show documentation in preview window
+    nnoremap <silent> <leader>k :call <SID>show_documentation()<cr>
 
     " quick fix menu
     vmap <silent> <leader><space> <Plug>(coc-codeaction-selected)
@@ -318,7 +327,7 @@ if g:IsLoaded('omnisharp-vim')
                 \ <Plug>(omnisharp_rename)
 
     au FileType cs nmap <buffer> <silent>
-                \ <C-k>
+                \ <leader>k
                 \ <Plug>(omnisharp_documentation)
 
     au FileType cs nmap <buffer> <silent>
