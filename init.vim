@@ -106,6 +106,14 @@ call g:AddPackage({ 'repo': 'gko', 'package': 'vim-coloresque' })
 
 " ------------ Remaps  ------------ "
 
+" Bind opening a terminal instance at the current buffer to leader-t
+map <silent> <leader>t :call g:OpenTerminal(expand('%:p:h'))<CR>i
+function! g:OpenTerminal(path)
+    :tabedit
+    let command = "cd ".a:path." && $SHELL"
+    :call termopen(command)
+endfunction
+
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
 noremap <silent> <C-s> :call g:Save()<CR>:w<CR>
