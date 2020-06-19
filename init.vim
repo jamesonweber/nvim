@@ -113,6 +113,8 @@ function! g:OpenTerminal(path)
     let command = "cd ".a:path." && $SHELL"
     :call termopen(command)
 endfunction
+" Bind return to normal mode to esc for consistency
+tnoremap <Esc> <C-\><C-n>
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
