@@ -3,5 +3,8 @@
     "diagnostic.hintSign": "h",
     "diagnostic.infoSign": "i",
     "diagnostic.warningSign": "w",
-    "typescript.preferences.importModuleSpecifier": "relative"
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "cSpell.userWords": [
+      "reimplement"
+    ]
 }

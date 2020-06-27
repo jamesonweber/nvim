@@ -114,7 +114,7 @@ function! g:OpenTerminal(path)
     :call termopen(command)
 endfunction
 " Bind return to normal mode to esc for consistency
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>:q<CR>
 
 " Bind close file buffer to ctrl q
 noremap <silent> <C-q> :bd<cr>
